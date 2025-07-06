@@ -15,7 +15,7 @@ require("lazy").setup({
   { import = "plugins.toggleterm"},
   { import = "plugins.vimtex"},
   { import = "plugins.luasnip"},
-  { import = "plugins.autopairs" }
+  { import = "plugins.autopairs" },
   -- OPTIONAL: add Treesitter and LSP if you want:
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
   { "nvim-lualine/lualine.nvim", dependencies = { "nvim-tree/nvim-web-devicons" }, config = true },

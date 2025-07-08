@@ -20,4 +20,43 @@ return {
     i(3, "Start writing here..."),
     t({ "", "", "\\end{document}" }),
   }),
+s("letter", fmt([[
+    \documentclass[12pt]{{letter}}
+    \usepackage[margin=1in]{{geometry}}
+    \usepackage{{hyperref}}
+
+    \signature{{{signature}}}
+    \address{{{address}}}
+    \date{{{date}}}
+
+    \begin{{document}}
+
+    \begin{{letter}}{{{recipient}}}
+
+    \opening{{{opening}}}
+
+    \textbf{{Subject: {subject}}}\\[1em]
+
+    {body}
+
+    \closing{{{closing}}}
+
+    \ps{{{ps}}}
+    \encl{{{encl}}}
+
+    \end{{letter}}
+
+    \end{{document}}
+  ]], {
+    signature = i(1, "Your Name"),
+    address   = i(2, "123 Main St\\\\Your City, ST 12345\\\\your@email.com"),
+    date      = i(3, "\\today"),
+    recipient = i(4, "Recipient Name\\\\Company\\\\Address Line"),
+    opening   = i(5, "Dear Recipient,"),
+    subject   = i(6, "Job Application"),
+    body      = i(7, "I am writing to..."),
+    closing   = i(8, "Sincerely,"),
+    ps        = i(9, "P.S. Thank you!"),
+    encl      = i(10, "Resume"),
+  }))
 }

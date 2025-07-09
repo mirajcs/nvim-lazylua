@@ -58,5 +58,9 @@ s("letter", fmt([[
     closing   = i(8, "Sincerely,"),
     ps        = i(9, "P.S. Thank you!"),
     encl      = i(10, "Resume"),
+  })),
+  s("frac", fmt([[\dfrac{{num}}{{dnum}}]],{
+      num = i(1, "num"),
+      dnum = i(2, "dnum"),
   }))
 }

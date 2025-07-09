@@ -63,5 +63,13 @@ s("letter", fmt([[
   s("frac", fmt([[\dfrac{{{num}}}{{{dnum}}}]],{
       num = i(1, "num"),
       dnum = i(2, "dnum"),
+  })),
+  s("the", t("\\theta")),
+  s("oset", fmt([[\overset{{{over}}}{{{symbol}}}]],{
+      over = i(1, "over"),
+      symbol = i(2, "symbol"),
+  })),
+  s("mbb", fmt([[\mathbb{{{sym}}}]],{
+      sym = i(1, "sym")
   }))
 }

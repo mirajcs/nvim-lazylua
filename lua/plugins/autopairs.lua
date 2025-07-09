@@ -16,3 +16,19 @@ return {
         end
         end,
 }
+
+-- Add custom rules
+local npairs = require("nvim-autopairs")
+local Rule   = require("nvim-autopairs.rule")
+
+npairs.add_rules {
+  Rule("\\(", "\\)", { "tex", "plaintex", "markdown" })
+    :with_pair(function(opts)
+      return opts.line:sub(opts.col - 1, opts.col - 1) == "\\"
+    end),
+
+  Rule("\\[", "\\]", { "tex", "plaintex", "markdown" })
+    :with_pair(function(opts)
+      return opts.line:sub(opts.col - 1, opts.col - 1) == "\\"
+    end),
+}
